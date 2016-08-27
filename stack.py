@@ -1,3 +1,26 @@
+"""DISCUSSION QUESTIONS (for both Stacks and Queues"""
+"""
+1. In the following cases, would a stack or queue be a more appropriate data structure?
+
+The process of loading and unloading pallets onto a flatbed truck
+    Stack --> last in, first out
+Putting bottle caps on bottles of beer as they roll down an assembly line
+    Queue --> first in, first out
+Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2)
+    Stack
+
+Describe two more situations where a queue would be an appropriate data structure.
+    -Playlist of songs / album tracks --> you start at the beginning and play in order
+    (assuming you listen to music the old school way)
+    -Any type of line in a retail store / etc. (similar to line at the DMV example)
+
+Describe two more situations where a stack would be an appropriate data structure.
+    -Packing / unpacking a suitcase
+    -Browser back button
+
+
+"""
+
 class StackEmptyError(IndexError):
     """Attempt to pop an empty stack."""
 
@@ -76,9 +99,7 @@ class Stack(object):
             3
         """
 
-        # FIXME
-
-        pass
+        return len(self._list)
         
     def empty(self):
         """Empty stack::
@@ -96,10 +117,10 @@ class Stack(object):
             >>> s.length()
             0
         """
+        while len(self._list) > 0:
+            for s in self._list:
+                self._list.pop()
 
-        # FIXME
-
-        pass
 
     def is_empty(self):
         """Is stack empty?
@@ -117,9 +138,7 @@ class Stack(object):
             False
         """
 
-        # FIXME
-
-        pass
+        return len(self._list) == 0
 
 if __name__ == "__main__":
     import doctest
