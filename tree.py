@@ -1,3 +1,25 @@
+"""DISCUSSION QUESTIONS"""
+"""
+1. Given the tree above, in what order would a Breadth First Search (BFS) algorithm
+visit each node until finding burrito (starting at food)? Just list the order of nodes
+visited; no need to recreate the state of the algorithm data in your answer.
+food --> Italian --> Indian --> Mexican --> lasagna --> pizza --> tikka masala -->
+saag --> BURRITO
+
+2. Given the tree above, in what order would a Depth First Search (DFS) algorithm visit
+each node until finding Chicago-style (starting at food)? Just list the order of nodes
+visited; no need to recreate the state of the algorithm data in your answer.
+food --> Mexican --> enchiladas --> tacos --> burrito --> Indian --> saag -->
+tikka masala --> Italian --> pizza --> Sicilian --> New York Style -->
+CHICAGO STYLE
+
+3. How is a binary search tree different from other trees?
+A binary search tree is unique in two ways:
+    1. Each node has at most two child nodes (could also have one or none)
+    2. The tree is organized meaningfully - typically, with a "middle value" at the top
+    of the tree, and greater values to the right of each node, with lesser values to the left.
+"""
+
 """Tree class and tree node class."""
 
 
@@ -26,9 +48,7 @@ class Node(object):
             2
         """
 
-        # FIXME
-
-        pass
+        return len(self.children)
 
 
 class Tree(object):
@@ -93,8 +113,17 @@ class Tree(object):
 
         """
 
-        # FIXME
-        pass
+        to_visit = [self.root]
+
+        while to_visit:
+            node = to_visit.pop(0)
+
+            if node.data == data:
+                return node
+
+            to_visit.extend(node.children)
+
+
 
 if __name__ == "__main__":
     import doctest

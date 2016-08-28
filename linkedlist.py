@@ -1,8 +1,8 @@
 """DISCUSSION QUESTIONS"""
 
 """
-1. Given the linked list below, which are the nodes? What is the data for each 
-node? Where is the head? Where is the tail? (Please be as specific as possible —
+1. Given the linked list below, which are the nodes? What is the data for each
+node? Where is the head? Where is the tail? (Please be as specific as possible
 exactly which parts of the diagram correspond to each part? Arrows? Boxes? Text?)
 
 A: Each node is represented by a pair of boxes. The first box represents the "data" stored
@@ -15,7 +15,7 @@ The tail is the node w/data "Cherry". Although it is not specified in this diagr
 in the best case scenario there would be a separate variable called 'tail' that would
 point to the node whose 'next' is none.
 
-2. What’s the difference between doubly- and singly-linked lists?
+2. What’s the difference between doubly and singly linked lists?
 
 A. Singly linked lists are only linked in one direction (going from head to tail).
 Doubly linked lists contain pointers / references between nodes in both directions.
@@ -146,4 +146,3 @@ if __name__ == "__main__":
     if not result.failed:
         print "ALL TESTS PASSED. GOOD WORK!"
     print
-
