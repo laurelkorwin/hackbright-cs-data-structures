@@ -117,9 +117,12 @@ class Stack(object):
             >>> s.length()
             0
         """
-        while len(self._list) > 0:
-            for s in self._list:
-                self._list.pop()
+        self._list = []
+
+        # Alternative (longer) way below:
+        # while len(self._list) > 0:
+        #     for s in self._list:
+        #         self._list.pop()
 
 
     def is_empty(self):
