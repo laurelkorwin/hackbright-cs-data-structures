@@ -1,3 +1,33 @@
+"""DISCUSSION QUESTIONS"""
+
+"""
+1. Given the linked list below, which are the nodes? What is the data for each 
+node? Where is the head? Where is the tail? (Please be as specific as possible —
+exactly which parts of the diagram correspond to each part? Arrows? Boxes? Text?)
+
+A: Each node is represented by a pair of boxes. The first box represents the "data" stored
+on the node, and the second box representing the "next" reference also stored on each node.
+
+The head is the node w/data "Apple". Specifically, the head is a separate variable that
+points to that particular node.
+
+The tail is the node w/data "Cherry". Although it is not specified in this diagram,
+in the best case scenario there would be a separate variable called 'tail' that would
+point to the node whose 'next' is none.
+
+2. What’s the difference between doubly- and singly-linked lists?
+
+A. Singly linked lists are only linked in one direction (going from head to tail).
+Doubly linked lists contain pointers / references between nodes in both directions.
+
+3. Why is it faster to append to a linked list if we keep track of the tail as an attribute?
+
+A. If you did not keep track of the tail, every time you wanted to append you would have to
+loop through the entire list to find the node whose next was None. If you keep track of the tail,
+you can just access that variable to find the node whose next is None and append to that.
+
+"""
+
 # Linked list with Node/LinkedList classes
 
 
@@ -76,9 +106,11 @@ class LinkedList(object):
             fish
         """
 
-        # FIXME
+        current = self.head
 
-        pass
+        while current is not None:
+            print current.data
+            current = current.next
 
     def get_node_by_index(self, idx):
         """Return a node with the given index::
@@ -95,9 +127,16 @@ class LinkedList(object):
             <Node fish>
         """
 
-        # FIXME
+        current = self.head
+        counter = 0
 
-        pass
+        while current is not None:
+            if counter == idx:
+                return current
+            else:
+                counter += 1
+                current = current.next
+
 
 if __name__ == "__main__":
     import doctest
